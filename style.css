@@ -1,0 +1,130 @@
+ @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+            font-family: 'VT323', monospace;
+
+        }
+
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgb(224, 224, 77);
+            animation: typing 5s  steps(30)  forwards ;
+        }
+
+        @keyframes typing {
+            from { width:0 ; }
+
+            to { width: 30ch;}
+        }
+       
+
+        .choices {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            animation: slideIn 2s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 50px;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgb(209, 196, 19);
+            box-shadow: 0 0 10px rgb(209, 196, 19), 0px 0px 20px rgb(209, 196, 19) ;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        button:hover {
+            transform: linear (2) translateY(-5px);
+            box-shadow: 0 0 20px rgb(209, 196, 19) ;
+            background: rgb(209, 196, 19);
+        }
+
+        #result {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            min-height: 80px;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        #score {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgb(213, 216, 16);
+        
+            animation: fadeIn 1s ease forwards;
+        }
+
+        #score:hover{
+            background-color: black;
+            box-shadow:0 0 10px rgb(209, 196, 19), 0 0 10px rgb(209, 196, 19) ;
+        }
+         .vs {
+            font-size: 2rem;
+            margin: 0 15px;
+            color: rgb(213, 216, 16);
+            text-shadow: 0 0 10px rgb(213, 216, 16);
+        }
+
+        .selection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.5s ease;
+        }
+
+        .selection.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+
+        
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .choices { flex-direction: column; }
+            button { width: 70px; height: 70px; font-size: 2rem; }
+        }
